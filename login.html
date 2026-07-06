@@ -83,25 +83,17 @@ body {
 
 <script>
 function login() {
+  let nama = document.getElementById("nama").value.trim();
+  let password = document.getElementById("password").value.trim();
 
-    let nama = document.getElementById("nama").value.trim();
-    let password = document.getElementById("password").value.trim();
+  if (nama === "" || password === "") {
+    alert("Isi semua!");
+    return;
+  }
 
-    if (nama === "") {
-        alert("Nama wajib diisi!");
-        return;
-    }
+  alert("Login berhasil 🎉");
 
-    if (password === "") {
-        alert("Password wajib diisi!");
-        return;
-    }
-
-    // Simpan nama user
-    localStorage.setItem("user", nama);
-
-    alert("Login berhasil 🎉");
-window.location.href = "landing.html";
+  window.location.href = "landing.html";
 }
 </script>
 
