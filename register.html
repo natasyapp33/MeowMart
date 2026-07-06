@@ -101,7 +101,10 @@ function register() {
   }
 
   alert("Register berhasil 🎉");
-  window.location.href = "login.html";
+
+localStorage.setItem("user", user);
+
+window.location.href = "login.html";
 }
 </script>
 
