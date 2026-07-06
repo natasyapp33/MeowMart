@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #f3dfcf, #f7d6e0);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-box {
+  background: #fff5ec;
+  padding: 40px;
+  border-radius: 20px;
+  width: 340px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.register-box h2 {
+  color: #e89ab7;
+  margin-bottom: 20px;
+}
+
+.register-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #f0c6d6;
+  border-radius: 12px;
+  background: #fffaf6;
+  outline: none;
+}
+
+.register-box button {
+  width: 100%;
+  padding: 12px;
+  background: #e89ab7;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.register-box button:hover {
+  background: #d97fa4;
+}
+
+.register-box p {
+  font-size: 12px;
+  color: #8b6f63;
+  margin-top: 15px;
+}
+
+.register-box a {
+  color: #e89ab7;
+  text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="register-box">
+  <h2>Create Account 💗</h2>
+
+  <input type="text" id="username" placeholder="Username">
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Password">
+  <input type="password" id="confirm" placeholder="Confirm Password">
+
+  <button type="button" onclick="register()">Daftar</button>
+
+  <p>Sudah punya akun? <a href="login.html">Login</a></p>
+</div>
+
+<script>
+function register() {
+  let user = document.getElementById("username").value;
+  let email = document.getElementById("email").value;
+  let pass = document.getElementById("password").value;
+  let confirm = document.getElementById("confirm").value;
+
+  if (!user || !email || !pass || !confirm) {
+    alert("Semua harus diisi!");
+    return;
+  }
+
+  if (pass !== confirm) {
+    alert("Password tidak sama!");
+    return;
+  }
+
+  alert("Register berhasil 🎉");
+  window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
